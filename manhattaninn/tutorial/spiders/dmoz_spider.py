@@ -3,11 +3,12 @@ from scrapy.selector import Selector
 
 from tutorial.items import DmozItem
 
-class ManhattanInnSpider(Spider):
+class DmozSpider(Spider):
 	name = "dmoz"
-	allowed_domains = ["blogspot.com"]
+	allowed_domains = ["dmoz.org"]
 	start_urls = [
-		"http://manhattaninn.blogspot.com/"
+		"http://www.dmoz.org/Computers/Programming/Languages/Python/Books/",
+		"http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"		
 	]
 
 	def parse(self, response):
@@ -26,5 +27,3 @@ class ManhattanInnSpider(Spider):
 
 		# filename = response.url.split("/")[-2]
 		# open(filename, 'wb').write(response.body)
-
-		# sel.css('span[style="font-size: large;"]').extract();
